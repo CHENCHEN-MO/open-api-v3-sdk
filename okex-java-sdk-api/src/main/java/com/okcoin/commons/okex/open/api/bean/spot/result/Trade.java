@@ -1,10 +1,16 @@
 package com.okcoin.commons.okex.open.api.bean.spot.result;
 
 public class Trade {
+
+    //成交时间
     private String timestamp;
+    //成交id
     private Integer trade_id;
+    //成交价格
     private String price;
+    //成交数量
     private String size;
+    //成交方向  "bug" or "sell"
     private String side;
     private String time;
 

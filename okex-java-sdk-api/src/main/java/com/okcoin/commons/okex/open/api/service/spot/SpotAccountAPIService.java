@@ -28,14 +28,14 @@ public interface SpotAccountAPIService {
 
 
     /**
-     * 账户资产列表
+     * 币币账户资产列表
      *
      * @return
      */
     List<Account> getAccounts();
 
     /**
-     * 账单列表
+     * 列出账户资产流水
      *
      * @param currency
      * @param from
@@ -46,7 +46,7 @@ public interface SpotAccountAPIService {
     List<Ledger> getLedgersByCurrency(String currency, String from, String to, String limit);
 
     /**
-     * 单币资产
+     * 币币账户特定资产列表
      *
      * @param currency
      * @return

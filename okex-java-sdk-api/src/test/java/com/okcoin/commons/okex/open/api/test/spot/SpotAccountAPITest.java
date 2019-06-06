@@ -63,7 +63,7 @@ public class SpotAccountAPITest extends SpotAPIBaseTests {
      */
     @Test
     public void getLedgersByCurrency() {
-        final List<Ledger> ledgers = this.spotAccountAPIService.getLedgersByCurrency("usdt", null, null, "2");
+        final List<Ledger> ledgers = this.spotAccountAPIService.getLedgersByCurrency("usdt", null, null, "10");
         this.toResultString(SpotAccountAPITest.LOG, "ledges", ledgers);
     }
 

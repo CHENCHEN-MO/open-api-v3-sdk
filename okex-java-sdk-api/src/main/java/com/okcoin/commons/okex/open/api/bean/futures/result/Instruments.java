@@ -9,31 +9,31 @@ package com.okcoin.commons.okex.open.api.bean.futures.result;
  */
 public class Instruments {
     /**
-     * The id of the futures contract
+     * 币对名称
      */
     private String instrument_id;
     /**
-     * Currency
+     * 交易货币币种
      */
     private String underlying_index;
     /**
-     * Quote currency
+     * 计价货币币种
      */
     private String quote_currency;
     /**
-     * Minimum amount: $
+     * 最小交易数量
      */
     private String tick_size;
     /**
-     * Unit price per contract
+     * 交易货币数量精度t
      */
     private String contract_val;
     /**
-     * Effect of time
+     * 开始时间
      */
     private String listing;
     /**
-     * Settlement price
+     * 结束时间
      */
     private String delivery;
     /**

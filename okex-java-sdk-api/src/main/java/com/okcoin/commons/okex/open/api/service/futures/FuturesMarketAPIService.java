@@ -14,7 +14,7 @@ import java.util.List;
 public interface FuturesMarketAPIService {
 
     /**
-     * Get all of futures contract list
+     * 获取交易币对的列表，查询各币对的交易限制和价格步长等信息。
      */
     List<Instruments> getInstruments();
 

@@ -2,18 +2,28 @@ package com.okcoin.commons.okex.open.api.bean.spot.result;
 
 public class Ticker {
 
+    //币对名称
     private String product_id;
+    //最新成交价
     private String last;
+    //卖一价
+    private String best_ask;
+    //买一价
+    private String best_bid;
+    //24小时开盘价
+    private String open_24h;
+    //24小时最高价
+    private String high_24h;
+    //24小时最低价
+    private String low_24h;
+    //24小时成交量，按交易货币统计
+    private String base_volume_24h;
+    //24小时成交量，按计价货币统计
+    private String quote_volume_24h;
+    //系统时间戳
+    private String timestamp;
     private String bid;
     private String ask;
-    private String open_24h;
-    private String high_24h;
-    private String low_24h;
-    private String base_volume_24h;
-    private String timestamp;
-    private String quote_volume_24h;
-    private String best_ask;
-    private String best_bid;
     private String instrument_id;
 
     public String getInstrument_id() {

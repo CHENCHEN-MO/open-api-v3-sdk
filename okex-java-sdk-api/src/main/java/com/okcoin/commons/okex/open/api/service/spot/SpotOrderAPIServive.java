@@ -70,8 +70,9 @@ public interface SpotOrderAPIServive {
     /**
      * 订单列表
      *
-     * @param product
-     * @param status
+     * @param product 币对名称
+     * @param status 订单状态 所有状态为"ALL" ("-2":失败,"-1":撤单成功,"0":等待成交 ,"1":部分成交, "2":完全成交,
+     *               "3":下单中,"4":撤单中,"6": 未完成（等待成交+部分成交），"7":已完成（撤单成功+完全成交））
      * @param from
      * @param to
      * @param limit
@@ -80,8 +81,8 @@ public interface SpotOrderAPIServive {
     List<OrderInfo> getOrders(String product, String status, String from, String to, String limit);
 
     /**
-     * 订单列表
-     *
+     * 获取所有未成交订单
+     * @param instrument_id  币对名称
      * @param from
      * @param to
      * @param limit
@@ -90,10 +91,10 @@ public interface SpotOrderAPIServive {
     List<OrderInfo> getPendingOrders(String from, String to, String limit, String instrument_id);
 
     /**
-     * 账单列表
+     * 获取成交明细
      *
      * @param orderId
-     * @param product
+     * @param product 币对名称
      * @param from
      * @param to
      * @param limit

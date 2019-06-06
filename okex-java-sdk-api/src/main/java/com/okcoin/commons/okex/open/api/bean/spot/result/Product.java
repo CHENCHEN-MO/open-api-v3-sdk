@@ -1,18 +1,32 @@
 package com.okcoin.commons.okex.open.api.bean.spot.result;
 
+//币对信息
 public class Product {
+
+    //币对名称
+    private String instrument_id;
+
+    //计价货币币种
+    private String base_increment;
+
+    //最小交易数量
+    private String min_size;
+
+    //计价货币币种
+    private String quote_currency;
+
+    //交易货币数量精度
+    private String size_increment;
+
+    //交易价格精度
+    private String tick_size;
 
     private String product_id;
     private String base_currency;
-    private String quote_currency;
-    private String min_size;
-    private String size_increment;
-    private String tick_size;
 
     private String base_min_size;
-    private String base_increment;
+
     private String quote_increment;
-    private String instrument_id;
 
     public String getInstrument_id() {
         return this.instrument_id;

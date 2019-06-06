@@ -8,6 +8,7 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 public class SpotProductAPITest extends SpotAPIBaseTests {
@@ -23,7 +24,7 @@ public class SpotProductAPITest extends SpotAPIBaseTests {
     }
 
     /**
-     * 币对信息
+     * 获取交易币对的列表，查询各币对的交易限制和价格步长等信息。
      */
     @Test
     public void getProducts() {
@@ -32,12 +33,12 @@ public class SpotProductAPITest extends SpotAPIBaseTests {
     }
 
     /**
-     * 深度数据
+     * 获取币对的深度列表。这个请求不支持分页，一个请求返回整个深度列表。
      */
     @Test
     public void bookProductsByProductId() {
         for (int i = 0; i < 1; i++) {
-            final Book book = this.spotProductAPIService.bookProductsByProductId("BTC-usdt", "10", null);
+            final Book book = this.spotProductAPIService.bookProductsByProductId("BTC-usdt", "100", new BigDecimal(0.01));
             this.toResultString(SpotProductAPITest.LOG, "book", book);
             System.out.println("==========i=" + i);
             try {
@@ -72,7 +73,7 @@ public class SpotProductAPITest extends SpotAPIBaseTests {
      */
     @Test
     public void getTrades() {
-        final List<Trade> trades = this.spotProductAPIService.getTrades("btc-USDt", null, null, "2");
+        final List<Trade> trades = this.spotProductAPIService.getTrades("eos-USDt", null, null, "2");
         this.toResultString(SpotProductAPITest.LOG, "trades", trades);
     }
 
@@ -81,7 +82,7 @@ public class SpotProductAPITest extends SpotAPIBaseTests {
      */
     @Test
     public void getCandles() {
-        final List<KlineDto> klines = this.spotProductAPIService.getCandles("BTC-usdt", "60", null, null);
+        final List<KlineDto> klines = this.spotProductAPIService.getCandles("BTC-usdt", "86400", "2019-05-12T02:07:30.523", "2019-05-13T02:07:30.523");
         this.toResultString(SpotProductAPITest.LOG, "klines", klines);
     }
 

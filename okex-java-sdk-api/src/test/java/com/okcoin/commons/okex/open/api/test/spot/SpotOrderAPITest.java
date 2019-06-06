@@ -179,7 +179,7 @@ public class SpotOrderAPITest extends SpotAPIBaseTests {
      */
     @Test
     public void getOrders() {
-        final List<OrderInfo> orderInfoList = this.spotOrderAPIServive.getOrders("Btc-usdT", "all", null, null, "2");
+        final List<OrderInfo> orderInfoList = this.spotOrderAPIServive.getOrders("xrp-usdT", "all", null, null, "2");
             this.toResultString(SpotOrderAPITest.LOG, "orderInfoList", orderInfoList);
     }
 

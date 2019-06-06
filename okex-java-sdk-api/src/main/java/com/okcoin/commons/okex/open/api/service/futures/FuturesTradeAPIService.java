@@ -20,7 +20,7 @@ import java.util.List;
 public interface FuturesTradeAPIService {
 
     /**
-     * Get all of futures contract position list
+     * 获取合约账户所有的持仓信息。会有大量的性能消耗，建议用户传币种获取。
      */
     JSONObject getPositions();
 

@@ -3,8 +3,11 @@ package com.okcoin.commons.okex.open.api.bean.spot.result;
 import java.util.List;
 
 public class Book {
+
+    //卖方深度
     private List<String[]> asks;
 
+    //买方深度
     private List<String[]> bids;
 
     public List<String[]> getAsks() {
