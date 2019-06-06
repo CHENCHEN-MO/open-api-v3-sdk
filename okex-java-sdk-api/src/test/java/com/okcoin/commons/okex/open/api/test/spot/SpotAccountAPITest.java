@@ -41,7 +41,7 @@ public class SpotAccountAPITest extends SpotAPIBaseTests {
     }
 
     /**
-     * 账户信息
+     * 币币账户资产列表
      */
     @Test
     public void getAccounts() {
@@ -50,7 +50,7 @@ public class SpotAccountAPITest extends SpotAPIBaseTests {
     }
 
     /**
-     * 单一账户信息
+     * 币币账户特定资产列表
      */
     @Test
     public void getAccountByCurrency() {

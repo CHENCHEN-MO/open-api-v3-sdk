@@ -56,9 +56,11 @@ public interface AccountAPI {
     @POST("/api/account/v3/unlock")
     Call<JSONObject> unlock(@Body JSONObject jsonObject);
 
+    //获取所有币种充值记录
     @GET("/api/account/v3/deposit/history")
     Call<JSONArray> getDepositHistory();
 
+    //获取单个币种的充值记录，为最近一百条数据
     @GET("/api/account/v3/deposit/history/{currency}")
     Call<JSONArray> getDepositHistory(@Path("currency") String currency);
 }

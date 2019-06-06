@@ -34,24 +34,24 @@ public class AccountAPITests extends  AccountAPIBaseTests{
     public void transfer() {
         Transfer transfer = new Transfer();
         transfer.setFrom(1);
-        transfer.setTo(6);
+        transfer.setTo(1);
         transfer.setCurrency("eos");
-        transfer.setAmount(BigDecimal.valueOf(0.0001));
+        transfer.setAmount(BigDecimal.valueOf(3));
         JSONObject result = this.accountAPIService.transfer(transfer);
         this.toResultString(AccountAPITests.LOG, "result", result);
     }
 
     @Test
     public void withdraw() {
-        Withdraw withdraw = new Withdraw();
-        withdraw.setTo_address("xxxxxxxxxxxxxxxxxxxxxxxxxxx");
-        withdraw.setFee(new BigDecimal("0.0005"));
-        withdraw.setCurrency("btc");
-        withdraw.setAmount(BigDecimal.ONE);
-        withdraw.setDestination(4);
-        withdraw.setTrade_pwd("123456");
-        JSONObject result = this.accountAPIService.withdraw(withdraw);
-        this.toResultString(AccountAPITests.LOG, "result", result);
+//        Withdraw withdraw = new Withdraw();
+//        withdraw.setTo_address("xxxxxxxxxxxxxxxxxxxxxxxxxxx");
+//        withdraw.setFee(new BigDecimal("0.0005"));
+//        withdraw.setCurrency("btc");
+//        withdraw.setAmount(BigDecimal.ONE);
+//        withdraw.setDestination(4);
+//        withdraw.setTrade_pwd("123456");
+//        JSONObject result = this.accountAPIService.withdraw(withdraw);
+//        this.toResultString(AccountAPITests.LOG, "result", result);
     }
 
     @Test
@@ -62,7 +62,7 @@ public class AccountAPITests extends  AccountAPIBaseTests{
 
     @Test
     public void getLedger() {
-        List<Ledger> result = this.accountAPIService.getLedger(2, "btc",null, null, 10);
+        List<Ledger> result = this.accountAPIService.getLedger(null, null,null, null, 10);
         this.toResultString(AccountAPITests.LOG, "result", result);
     }
 
@@ -70,13 +70,13 @@ public class AccountAPITests extends  AccountAPIBaseTests{
     public void getWallet() {
         List<Wallet> result = this.accountAPIService.getWallet();
         this.toResultString(AccountAPITests.LOG, "result", result);
-        List<Wallet> result2 = this.accountAPIService.getWallet("btc");
+        List<Wallet> result2 = this.accountAPIService.getWallet("eos");
         this.toResultString(AccountAPITests.LOG, "result", result2);
     }
 
     @Test
     public void getDepositAddress() {
-        JSONArray result = this.accountAPIService.getDepositAddress("btc");
+        JSONArray result = this.accountAPIService.getDepositAddress("xrp");
         this.toResultString(AccountAPITests.LOG, "result", result);
     }
 
@@ -112,5 +112,10 @@ public class AccountAPITests extends  AccountAPIBaseTests{
         this.toResultString(AccountAPITests.LOG, "result", result);
         JSONArray result2 = this.accountAPIService.getDepositHistory("btc");
         this.toResultString(AccountAPITests.LOG, "result", result2);
+    }
+
+    public static void main(String[] args) throws Exception {
+        System.out.println(-10%3);
+        throw new Exception("======");
     }
 }

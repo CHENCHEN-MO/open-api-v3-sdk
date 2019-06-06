@@ -2,10 +2,15 @@ package com.okcoin.commons.okex.open.api.bean.spot.result;
 
 public class Account {
 
+    //账户ID
     private String id;
+    //币种
     private String currency;
+    //余额
     private String balance;
+    //可用于交易的数量
     private String available;
+    //冻结(不可用)
     private String hold;
 
     public String getHold() {
